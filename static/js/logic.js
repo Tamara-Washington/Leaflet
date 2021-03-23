@@ -3,10 +3,18 @@
 
 let queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
 
+function markerSize(mag) {
+    return mag *3;
+}
+
 d3.json(queryUrl, function (data) {
-    console.log(data.features);
+    // console.log(data.features);
     createMap(data); 
 });
+
+function mapFeatures(data) {
+
+}
 
 function createMap(data) {
     // Define streetmap and darkmap layers
@@ -54,4 +62,14 @@ function createMap(data) {
     L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
     }).addTo(myMap);
+
 }
+
+// data.forEach( eqPoint => {
+//     L.circle(eqPoint.location, {
+//         color:color,
+//         fillColor: color,
+//         fillOpacity: 0.5,
+//         radius: Math.sqrt(eqpoint.points)*areaScale
+//     }).addTo(myMap);
+// });
