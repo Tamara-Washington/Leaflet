@@ -1,28 +1,33 @@
-//Create initial map
-let myMap = L.map("mapid", {
-    center: [37.7749, -122.4194],
-    zoom: 5
-});
-
-//Add the tile layer
-    let streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-        attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-        zoomOffset: 18,
-        id: "mapbox/streets-v11",
-        accessToken: API_KEY
-    }).addTo(myMap);
-
-// let query = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
-
-// d3.json(query, function (data) {
-//     // console.log(data.features)
-//     createMap(data);
+//Create inital map
+// let myMap = L.map("map", {
+//     center: [37.7749, -122.4194],
+//     zoom: 5
 // });
 
-// // d3.json(query).then(function(data) {
-// //     console.log(data.features);
+// let light = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+// attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+// maxZoom: 18,
+// id: "light-v10",
+// accessToken: API_KEY
+// }).addTo(myMap);
 
-// // });
+
+//Add the tile layer
+    // let streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    //     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    //     zoomOffset: 18,
+    //     id: "mapbox/streets-v9",
+    //     accessToken: API_KEY
+    // }).addTo(myMap);
+
+let queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
+
+d3.json(queryUrl,function(data) {
+    console.log(data.features);
+    // createMap(data); 
+
+
+});
 
 // function createMap(data) {
 //     // Define streetmap and darkmap layers
