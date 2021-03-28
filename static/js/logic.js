@@ -1,8 +1,6 @@
 
 let queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
-// let queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
-
 function markerSize(mag) {
     return mag * 50000;
 }
@@ -58,12 +56,6 @@ function createMap(data) {
     accessToken: API_KEY
 });
 
-    //This layer holds all the markers
-    // let eqLayer = L.geoJSON(data.features, {
-    //     onEachFeature: function(feature, layer) {
-    //         layer.bindPopup(`Place: ${feature.properties.place}<br>
-    //                         Magnitude: ${feature.properties.mag}`);
-    //     }
     var eqLayer = L.layerGroup()
 
 
