@@ -1,5 +1,7 @@
 # Leaflet Homework - Visualizing Data with Leaflet
 
+[See my completed version here.]( https://tamara-washington.github.io/Leaflet-Challenge/)
+
 ## Background
 
 ![1-Logo](Images/1-Logo.png)

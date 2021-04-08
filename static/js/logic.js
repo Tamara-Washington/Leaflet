@@ -27,10 +27,6 @@ d3.json(queryUrl, function (data) {
     createMap(data);
 });
 
-function mapFeatures(data) {
-
-}
-
 function createMap(data) {
     // Define streetmap and darkmap layers
     let light = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
